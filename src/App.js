@@ -1,4 +1,5 @@
-import GameItem from "./component/GameItem/GameItem";
+
+import GameLog from "./component/GameLog/GameLog"
 
 function App() {
 
@@ -48,7 +49,7 @@ function App() {
   return (
     <div>
       <h1>Player game tracker!</h1>
-      {playerGames.map(gameInfo => <GameItem {...gameInfo} />)}
+      <GameLog playerGames={playerGames}/>
     </div>
   );
 }

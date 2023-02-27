@@ -6,8 +6,7 @@
   padding: 1rem;
   border-radius: 6px;
   transform: skew(-20deg);
-  /* dummy margin to accomodate blend-in with row */
-  margin-left: 5px;
+  margin: 0px 15px 0px 5px;
 }
 
 .game-data div {
