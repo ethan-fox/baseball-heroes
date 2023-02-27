@@ -27,7 +27,7 @@ function App() {
     {
       gameData: {
         date: new Date(2020, 5, 4),
-        opponentId: 2,
+        opponentId: 4,
         result: "W 3-2"
       },
       AB: 4,
@@ -49,7 +49,7 @@ function App() {
   return (
     <div>
       <h1>Player game tracker!</h1>
-      <GameLog playerGames={playerGames}/>
+      <GameLog playerGames={playerGames} />
     </div>
   );
 }
