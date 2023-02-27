@@ -14,9 +14,9 @@ const GameItem = (props) => <BigCard className="game-item">
     <GameData {...props.gameData} />
     <StatLine {...{
         playerStats: [
-            { type: "AB", value: props.AB, },
-            { type: "H", value: props.H, },
-            { type: "BB", value: props.BB, },
+            { type: "AB", value: props.AB },
+            { type: "H", value: props.H },
+            { type: "BB", value: props.BB },
             { type: "SO", value: props.K },
             { type: "OBP", value: formattedCalculation((props.H + props.BB) / (props.AB + props.BB)) },
         ]
