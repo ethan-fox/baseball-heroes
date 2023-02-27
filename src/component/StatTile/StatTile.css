@@ -1,10 +1,10 @@
-.player-stat {
+.stat-tile {
   border: 2px inset rgb(228, 228, 228);
   background-color: rgb(238, 238, 238);
   margin: 10px;
 }
 
-.player-stat__type {
+.stat-tile__type {
   font-size: small;
   font-style: italic;
   font-weight: bold;
@@ -16,7 +16,7 @@
   /* padding-top: 50px; */
 }
 
-.player-stat__value {
+.stat-tile__value {
   font-size: x-large;
   padding: 1rem;
 }

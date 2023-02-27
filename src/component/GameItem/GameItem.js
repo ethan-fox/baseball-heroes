@@ -2,6 +2,7 @@ import "./GameItem.css";
 
 import { formattedCalculation } from "../../util/gameItemFormatter"
 
+import BigCard from "../Card/BigCard/BigCard";
 import GameData from "../GameData/GameData";
 import StatLine from "../StatLine/StatLine";
 
@@ -25,10 +26,10 @@ function GameItem(props) {
     // "Game data" -- regardless of the player
     // "Player data" -- specific to player performance
     // TODO better convention to pass in gameData?
-    return <div className="game-item">
+    return <BigCard className="game-item">
         <GameData {...props.gameData}/>
         <StatLine {...statLine}/>
-    </div>;
+    </BigCard>;
 }
 
 export default GameItem;

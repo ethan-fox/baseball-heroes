@@ -4,20 +4,20 @@
   display: flex;
   gap: 1rem;
   padding: 1rem;
-  border-radius: 6px;
-  transform: skew(-20deg);
+  /* border-radius: 6px; */
+  transform: skew(-10deg);
   margin: 0px 15px 0px 5px;
 }
 
 .game-data div {
-  transform: skew(20deg);
+  transform: skew(10deg);
 }
 
 .game-data__opponent {
   font-weight: bold;
   gap: 1rem;
   padding: 0.3rem;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   border: 3px solid;
   /* transform: skew(20deg); */
 }

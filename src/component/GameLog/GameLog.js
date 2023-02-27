@@ -1,11 +1,12 @@
-import './GameLog.css'
+import "./GameLog.css"
 
 import GameItem from "../GameItem/GameItem";
+import BigCard from "../Card/BigCard/BigCard"
 
 function GameLog(props) {
-    return <div className='game-log'>
+    return <BigCard className='game-log'>
         {props.playerGames.map(gameInfo => <GameItem {...gameInfo} />)}
-    </div>
+    </BigCard>
 }
 
 export default GameLog;
