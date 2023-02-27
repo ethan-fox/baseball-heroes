@@ -25,24 +25,14 @@
 }
 
 .game-item__section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .game-item__meta {
-    margin: 5px;
-}
-
-.game-item__opponent {
-  font-weight: bold;
-  gap: 1rem;
-  padding: 0.3rem;
-  border-radius: 6px;
-  /* background-color: #0ba200; */
-  border: 3px solid;
-  /* color: white; */
+  margin: 5px;
 }
 
 .game-item__calculated {

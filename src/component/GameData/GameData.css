@@ -1,0 +1,24 @@
+.game-data {
+  width: 280px;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  transform: skew(-20deg);
+  /* dummy margin to accomodate blend-in with row */
+  margin-left: 5px;
+}
+
+.game-data div {
+  transform: skew(20deg);
+}
+
+.game-data__opponent {
+  font-weight: bold;
+  gap: 1rem;
+  padding: 0.3rem;
+  border-radius: 6px;
+  border: 3px solid;
+  /* transform: skew(20deg); */
+}
