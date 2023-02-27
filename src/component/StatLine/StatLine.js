@@ -2,11 +2,9 @@ import "./StatLine.css"
 
 import StatTile from "../StatTile/StatTile"
 
-function StatLine(props) {
+const StatLine = (props) => <div className="stat-line">
+    {props.playerStats.map(ea => <StatTile {...ea} />)}
+</div>
 
-    return <div className="stat-line">
-        {props.playerStats.map(ea => <StatTile {...ea}/>)}
-    </div>
-}
 
 export default StatLine;

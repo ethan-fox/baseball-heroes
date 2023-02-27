@@ -1,13 +1,9 @@
 import "./StatTile.css"
 
-function StatTile(props) {
-    const value = props.value;
-    const type = props.type;
+const StatTile = (props) => <div className="stat-tile">
+    <div className="stat-tile__type">{props.type}</div>
+    <div className="stat-tile__value">{props.value}</div>
+</div>
 
-    return <div className="stat-tile">
-        <div className="stat-tile__type">{type}</div>
-        <div className="stat-tile__value">{value}</div>
-    </div>
-}
 
 export default StatTile;
