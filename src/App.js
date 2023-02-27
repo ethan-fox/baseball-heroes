@@ -12,6 +12,7 @@ function App() {
       },
       AB: 5,
       H: 3,
+      K: 2,
       BB: 1
     },
     {
@@ -22,6 +23,7 @@ function App() {
       },
       AB: 3,
       H: 0,
+      K: 0,
       BB: 1
     },
     {
@@ -32,6 +34,7 @@ function App() {
       },
       AB: 4,
       H: 1,
+      K: 1,
       BB: 0
     },
     {
@@ -40,8 +43,9 @@ function App() {
         opponentId: 3,
         result: "L 5-6"
       },
-      AB: 1,
+      AB: 2,
       H: 0,
+      K: 1,
       BB: 1
     },
   ]
