@@ -9,8 +9,7 @@
   background-color: #fff4ca;
   float: left;
   /* TODO I think this centers it properly. Revisit? */
-  margin: 1rem 25%;
-  width: 50%;
+  margin: 1rem;
   min-width: 730px;
 }
 
