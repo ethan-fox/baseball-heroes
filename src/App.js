@@ -1,4 +1,6 @@
 
+import AddGameItemButton from "./component/AddGameItemButton/AddGameItemButton";
+import AddGameItemForm from "./component/AddGameItemForm/AddGameItemForm";
 import GameLog from "./component/GameLog/GameLog"
 
 function App() {
@@ -53,6 +55,8 @@ function App() {
   return (
     <div>
       <h1>Player game tracker!</h1>
+      <AddGameItemForm />
+      <AddGameItemButton />
       <GameLog playerGames={playerGames} />
     </div>
   );
