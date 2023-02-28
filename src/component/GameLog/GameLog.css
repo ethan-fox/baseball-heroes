@@ -2,11 +2,16 @@
     display: flex;
     flex-direction: column;
     background-color: rgba(197, 197, 197, 0.312);
-    justify-content: center;
     margin: 1rem auto;
     padding: 1rem;
     width: 50%;
+    /* TODO is this needed? */
+    justify-content: center;
     /* Inner div + margins */
     min-width: calc(730px + 4rem);
-    /* border-radius: 12px; */
+}
+
+.game-log__adder_button {
+    margin-right: 1rem;
+    align-self: flex-end;
 }

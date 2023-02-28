@@ -1,0 +1,7 @@
+.add-game-item-button {
+  max-width: max-content;
+  font-weight: bold;
+  padding: 0.3rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
