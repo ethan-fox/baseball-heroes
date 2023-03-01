@@ -1,4 +1,4 @@
-import "./AddGameItemFormInput.css"
+import "./AddGameItemFormInput.css";
 
 import { useState } from "react";
 
@@ -42,10 +42,10 @@ const AddGameItemFormInput = (props) => {
                 //  place this shouldn't be an issue.
                 break;
         }
-    }
+    };
 
     const handleSubmit = (event) => {
-        event.preventDefault()
+        event.preventDefault();
 
         const payload = {
             date: selectedDate,
@@ -54,9 +54,14 @@ const AddGameItemFormInput = (props) => {
             H: inputHits,
             BB: inputWalks,
             K: inputStrikeouts
-        }
+        };
 
-        props.onSubmission(payload)
+        props.onSubmission(payload);
+
+        setInputAtBats('');
+        setInputHits('');
+        setInputWalks('');
+        setInputStrikeouts('');
     }
 
     return <form onSubmit={handleSubmit}>
@@ -66,6 +71,10 @@ const AddGameItemFormInput = (props) => {
             />
             <PlayerPerformanceFormInput
                 onTextChange={handleFormInput}
+                AB={inputAtBats}
+                H={inputHits}
+                BB={inputWalks}
+                K={inputStrikeouts}
             />
             <div className="termination-buttons">
                 <button>Cancel</button>

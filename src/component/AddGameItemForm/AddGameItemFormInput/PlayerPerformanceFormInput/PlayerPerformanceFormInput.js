@@ -33,21 +33,25 @@ const PlayerPerformanceFormInput = (props) => {
         <label>At-Bats</label>
         <input
             type="number" min="0"
+            value={props.AB}
             onChange={handleInputAtBats}
         />
         <label>Hits</label>
         <input
             type="number" min="0"
+            value={props.H}
             onChange={handleInputHits}
         />
         <label>Walks</label>
         <input
             type="number" min="0"
+            value={props.BB}
             onChange={handleInputWalks}
         />
         <label>Strikeouts</label>
         <input
             type="number" min="0"
+            value={props.K}
             onChange={handleInputStrikeouts}
         />
     </div>;
