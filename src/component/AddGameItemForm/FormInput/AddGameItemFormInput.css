@@ -1,0 +1,57 @@
+/* Textbox styling- browser-specific, unfortunately */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  /* margin: 0; TODO is this needed? */
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.add-game-item {
+  display: flex;
+  color: #272727;
+  justify-content: space-evenly;
+}
+
+.game-performance {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 25px 25px;
+    justify-content: left;
+    margin-left: 1rem;
+    /* width: max-content; */
+    border-right: 1px solid #757575;
+    padding-right: 3rem;
+}
+
+.game-performance__item {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.player-performance {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1rem 25px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.player-performance label {
+    text-align: right;
+}
+
+.player-performance input {
+    width: 2rem;
+}
+
+.termination-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-left: 10%;
+}

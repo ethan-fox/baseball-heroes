@@ -1,6 +1,7 @@
 .add-game-item-form {
   padding: 1rem;
-  background-color: aqua;
+  padding-top: 2rem;
+  background-color: #ffe6ca;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
   margin: 0 auto;
   width: 52%;
