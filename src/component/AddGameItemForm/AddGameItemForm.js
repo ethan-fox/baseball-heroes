@@ -1,7 +1,7 @@
 import "./AddGameItemForm.css"
 
 import BigCard from "../Card/BigCard/BigCard";
-import AddGameItemFormInput from "./FormInput/AddGameItemFormInput";
+import AddGameItemFormInput from "./AddGameItemFormInput/AddGameItemFormInput";
 
 
 const AddGameItemForm = (props) => {

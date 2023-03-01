@@ -1,9 +1,11 @@
 import "./AddGameItemFormInput.css"
 
 import { useState } from "react";
-import Select from "react-select";
 
-import { TEAM_SELECT_VALUES } from "./constant";
+import GamePerformanceFormInput from "./GamePerformanceFormInput/GamePerformanceFormInput";
+
+import { INPUT_COMPONENT } from "./constant";
+
 
 const AddGameItemFormInput = (props) => {
 
@@ -14,12 +16,28 @@ const AddGameItemFormInput = (props) => {
     const [inputWalks, setInputWalks] = useState('');
     const [inputStrikeouts, setInputStrikeouts] = useState('');
 
-    const handleSelectedDate = (event) => setSelectedDate(event.target.value);
-    const handleSelectedOpponent = (event) => setSelectedOpponent(event.value);
+    const handleSelectedDate = (value) => setSelectedDate(value);
+    const handleSelectedOpponent = (value) => setSelectedOpponent(value);
     const handleInputAtBats = (event) => setInputAtBats(event.target.value);
     const handleInputHits = (event) => setInputHits(event.target.value);
     const handleInputWalks = (event) => setInputWalks(event.target.value);
     const handleInputStrikeouts = (event) => setInputStrikeouts(event.target.value);
+
+    const handleFormInput = (value, type) => {
+        switch(type){
+            case INPUT_COMPONENT.SELECTED_DATE:
+                handleSelectedDate(value)
+                break;
+            case INPUT_COMPONENT.SELECTED_OPPONENT:
+                handleSelectedOpponent(value)
+                break;
+            default:
+                // Worst case, we don't do anything.
+                // We have a bunch of safeguards in
+                //  place this shouldn't be an issue.
+                break;
+        }
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -45,21 +63,9 @@ const AddGameItemFormInput = (props) => {
 
     return <form onSubmit={handleSubmit}>
         <div className="add-game-item">
-            <div className="game-performance">
-                <label className="game-performance__item">Date</label>
-                <input
-                    className="game-performance__item"
-                    type="date"
-                    value={selectedDate}
-                    onChange={handleSelectedDate}
-                />
-                <label className="game-performance__item">Opponent</label>
-                <Select
-                    className="game-performance__item"
-                    options={TEAM_SELECT_VALUES}
-                    onChange={handleSelectedOpponent}
-                />
-            </div>
+            <GamePerformanceFormInput
+                onTextChange={handleFormInput}
+            />
             <div className="player-performance">
                 <label>At-Bats</label>
                 <input

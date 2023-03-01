@@ -53,11 +53,9 @@ function App() {
     },
   ]);
 
-
   const handleNewGameSubmitted = (payload) => {
     console.log('In the app?', payload)
   }
-
 
   return (
     <div>
