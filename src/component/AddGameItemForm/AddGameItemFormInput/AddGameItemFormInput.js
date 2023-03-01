@@ -80,8 +80,6 @@ const AddGameItemFormInput = (props) => {
             K: inputStrikeouts
         }
 
-        setSelectedDate('')
-        setSelectedOpponent('')
         setInputAtBats('')
         setInputHits('')
         setInputWalks('')
