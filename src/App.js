@@ -71,7 +71,7 @@ function App() {
   return (
     <div>
       <h1>Player game tracker!</h1>
-      <SeasonSummary />
+      <SeasonSummary playerGames={playerGames}/>
       <AddGameItemForm onSubmission={handleNewGameSubmitted}/>
       <GameLog playerGames={playerGames} />
     </div>
