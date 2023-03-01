@@ -13,17 +13,15 @@ input[type="number"] {
 
 .add-game-item {
   display: flex;
-  color: #272727;
   justify-content: space-evenly;
 }
 
 .game-performance {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 25px 25px;
+    gap: 1rem;
     justify-content: left;
     margin-left: 1rem;
-    /* width: max-content; */
     border-right: 1px solid #757575;
     padding-right: 3rem;
 }

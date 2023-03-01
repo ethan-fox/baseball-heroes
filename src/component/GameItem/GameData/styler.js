@@ -1,5 +1,5 @@
 
-import { TEAM_ID_TO_INFO } from "../../constant/team" 
+import { TEAM_ID_TO_INFO } from "../../../constant/team" 
 
 const resultTileStyler = (gameResult) => { return {backgroundColor: (gameResult.includes("W") ? "#c7ffba" : "#ffabab") } }
 

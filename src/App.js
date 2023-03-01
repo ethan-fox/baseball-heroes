@@ -55,8 +55,8 @@ function App() {
   return (
     <div>
       <h1>Player game tracker!</h1>
-      <AddGameItemForm />
       <AddGameItemButton />
+      <AddGameItemForm />
       <GameLog playerGames={playerGames} />
     </div>
   );

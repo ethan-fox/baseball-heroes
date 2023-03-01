@@ -3,8 +3,8 @@ import "./GameItem.css";
 import { formattedCalculation } from "../../util/gameItemFormatter"
 
 import BigCard from "../Card/BigCard/BigCard";
-import GameData from "../GameData/GameData";
-import StatLine from "../StatLine/StatLine";
+import GameData from "./GameData/GameData";
+import StatLine from "./StatLine/StatLine";
 
 // Two divs:
 // "Game data" -- regardless of the player
