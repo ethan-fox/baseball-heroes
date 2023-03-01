@@ -1,6 +1,6 @@
 import "./GameData.css"
 
-import SmallCard from "../../Card/SmallCard/SmallCard"
+import SmallCard from "../../../../ui/component/Card/SmallCard/SmallCard"
 import { gameResultStyler, resultTileStyler, teamStyler } from "./styler";
 import { TEAM_ID_TO_INFO } from "../../../constant/team"
 

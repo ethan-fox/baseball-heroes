@@ -8,7 +8,7 @@ const TEAM_ID_TO_INFO = {
         name: "Athletics",
         primaryColor: "#47fc68",
         secondaryColor: "#f9fc47",
-        textColor: "#f9fc47"
+        textColor: "#0f5200"
     },
     1: {
         name: "Yankees",

@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import AddGameItemButton from "./component/AddGameItemButton/AddGameItemButton";
-import AddGameItemForm from "./component/AddGameItemForm/AddGameItemForm";
-import GameLog from "./component/GameLog/GameLog"
+import AddGameItemForm from "./domain/component/AddGameItemForm/AddGameItemForm";
+import GameLog from "./domain/component/GameLog/GameLog"
+import SeasonSummary from "./domain/component/SeasonSummary/SeasonSummary";
 
 function App() {
 
@@ -51,6 +51,17 @@ function App() {
       K: 1,
       BB: 1
     },
+    {
+      gameData: {
+        date: new Date(2020, 7, 7),
+        opponentId: 1,
+        result: "W 4-1"
+      },
+      AB: 3,
+      H: 3,
+      K: 0,
+      BB: 1
+    },
   ]);
 
   const handleNewGameSubmitted = (payload) => {
@@ -60,7 +71,7 @@ function App() {
   return (
     <div>
       <h1>Player game tracker!</h1>
-      <AddGameItemButton />
+      <SeasonSummary />
       <AddGameItemForm onSubmission={handleNewGameSubmitted}/>
       <GameLog playerGames={playerGames} />
     </div>

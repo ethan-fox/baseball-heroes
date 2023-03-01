@@ -1,6 +1,6 @@
 import "./AddGameItemForm.css"
 
-import BigCard from "../Card/BigCard/BigCard";
+import BigCard from "../../../ui/component/Card/BigCard/BigCard";
 import AddGameItemFormInput from "./AddGameItemFormInput/AddGameItemFormInput";
 
 
