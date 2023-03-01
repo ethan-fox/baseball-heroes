@@ -4,13 +4,10 @@ import BigCard from "../Card/BigCard/BigCard";
 import AddGameItemFormInput from "./FormInput/AddGameItemFormInput";
 
 
-const AddGameItemForm = () => {
+const AddGameItemForm = (props) => {
     
-    const handleNewGameSubmitted = (payload) => {
-        console.log('In the form')
-        console.log(payload)
-    }
-    
+    const handleNewGameSubmitted = (payload) => props.onSubmission(payload);
+
     return <BigCard className="add-game-item-form">
         <AddGameItemFormInput onSubmission={handleNewGameSubmitted}/>
     </BigCard>;

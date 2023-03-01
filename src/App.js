@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 import AddGameItemButton from "./component/AddGameItemButton/AddGameItemButton";
 import AddGameItemForm from "./component/AddGameItemForm/AddGameItemForm";
@@ -5,7 +6,7 @@ import GameLog from "./component/GameLog/GameLog"
 
 function App() {
 
-  const playerGames = [
+  const [playerGames, setPlayerGames] = useState([
     {
       gameData: {
         date: new Date(2020, 5, 2),
@@ -50,13 +51,19 @@ function App() {
       K: 1,
       BB: 1
     },
-  ]
+  ]);
+
+
+  const handleNewGameSubmitted = (payload) => {
+    console.log('In the app?', payload)
+  }
+
 
   return (
     <div>
       <h1>Player game tracker!</h1>
       <AddGameItemButton />
-      <AddGameItemForm />
+      <AddGameItemForm onSubmission={handleNewGameSubmitted}/>
       <GameLog playerGames={playerGames} />
     </div>
   );
