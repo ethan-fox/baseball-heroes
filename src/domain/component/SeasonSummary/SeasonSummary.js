@@ -36,10 +36,13 @@ const SeasonSummary = (props) => {
     const data = _.range(2, 10).map(i => summaryByMonth[i]);
 
     return <BigCard className="season-summary">
-        <Select
-            className="season-summary__filter"
-            options={yearSelectOpts}
-        />
+        <div className="season-summary__filter">
+            <div>Filter by Year</div>
+            <Select
+                options={yearSelectOpts}
+                defaultValue={yearSelectOpts.at(-1)}
+            />
+        </div>
         <BigCard className="season-summary__chart">
             <ResponsiveContainer
                 width="100%" height={300}

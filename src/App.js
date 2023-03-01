@@ -62,6 +62,18 @@ function App() {
       K: 0,
       BB: 1
     },
+    {
+      gameData: {
+        date: new Date(2021, 7, 3),
+        opponentId: 1,
+        result: "L 6-2"
+      },
+      AB: 4,
+      H: 3,
+      K: 0,
+      BB: 1
+    },
+
   ]);
 
   const handleNewGameSubmitted = (payload) => {
