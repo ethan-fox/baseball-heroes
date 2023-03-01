@@ -16,22 +16,6 @@ input[type="number"] {
   justify-content: space-evenly;
 }
 
-.player-performance {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 1rem 25px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-.player-performance label {
-    text-align: right;
-}
-
-.player-performance input {
-    width: 2rem;
-}
-
 .termination-buttons {
     display: flex;
     flex-direction: column;
