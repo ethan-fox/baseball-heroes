@@ -1,10 +1,21 @@
 import * as _ from "lodash"
 
-const INPUT_COMPONENT = {
-    SELECTED_DATE: "SELECTED_DATE",
-    SELECTED_OPPONENT: "SELECTED_OPPONENT"
-}
+import { TEAM_ID_TO_INFO } from "../../../constant/team"
+
+const FORM_INPUT_COMPONENT = {
+    DATE: "DATE",
+    OPPONENT: "OPPONENT",
+    AB: "AB",
+    H: "H",
+    BB: "BB",
+    K: "K"
+    
+};
+
+// TODO LMAO this is weird
+const TEAM_SELECT_VALUES = _.range(0, 6).map((i) => { return { value: i, label: TEAM_ID_TO_INFO[i].name } })
 
 export {
-    INPUT_COMPONENT
+    FORM_INPUT_COMPONENT,
+    TEAM_SELECT_VALUES
 };

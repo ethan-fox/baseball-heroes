@@ -4,8 +4,37 @@ import { useState } from "react";
 
 import GamePerformanceFormInput from "./GamePerformanceFormInput/GamePerformanceFormInput";
 
-import { INPUT_COMPONENT } from "./constant";
+import { FORM_INPUT_COMPONENT } from "./constant";
 
+// const PlayerPerformanceFormInput = (props) => {
+
+//     return <div className="player-performance">
+//         <label>At-Bats</label>
+//         <input
+//             type="number" min="0"
+//             value={inputAtBats}
+//             onChange={handleInputAtBats}
+//         />
+//         <label>Hits</label>
+//         <input
+//             type="number" min="0"
+//             value={inputHits}
+//             onChange={handleInputHits}
+//         />
+//         <label>Walks</label>
+//         <input
+//             type="number" min="0"
+//             value={inputWalks}
+//             onChange={handleInputWalks}
+//         />
+//         <label>Strikeouts</label>
+//         <input
+//             type="number" min="0"
+//             value={inputStrikeouts}
+//             onChange={handleInputStrikeouts}
+//         />
+//     </div>;
+// }
 
 const AddGameItemFormInput = (props) => {
 
@@ -24,11 +53,11 @@ const AddGameItemFormInput = (props) => {
     const handleInputStrikeouts = (event) => setInputStrikeouts(event.target.value);
 
     const handleFormInput = (value, type) => {
-        switch(type){
-            case INPUT_COMPONENT.SELECTED_DATE:
+        switch (type) {
+            case FORM_INPUT_COMPONENT.DATE:
                 handleSelectedDate(value)
                 break;
-            case INPUT_COMPONENT.SELECTED_OPPONENT:
+            case FORM_INPUT_COMPONENT.OPPONENT:
                 handleSelectedOpponent(value)
                 break;
             default:
@@ -64,6 +93,7 @@ const AddGameItemFormInput = (props) => {
     return <form onSubmit={handleSubmit}>
         <div className="add-game-item">
             <GamePerformanceFormInput
+                selectedDate={selectedDate}
                 onTextChange={handleFormInput}
             />
             <div className="player-performance">

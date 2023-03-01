@@ -1,22 +1,21 @@
-import "./GamePerformanceFormInput.css"
+import "./GamePerformanceFormInput.css";
 
-import Select from "react-select"
+import Select from "react-select";
 
-import { INPUT_COMPONENT } from "../constant"
-import { TEAM_SELECT_VALUES } from "./constant"
+import { FORM_INPUT_COMPONENT, TEAM_SELECT_VALUES } from "../constant";
 
 const GamePerformanceFormInput = (props) => {
 
     const handleSelectedDate = (event) => {
         props.onTextChange(
             event.target.value,
-            INPUT_COMPONENT.SELECTED_DATE
+            FORM_INPUT_COMPONENT.DATE
         )
     }
     const handleSelectedOpponent = (event) => {
         props.onTextChange(
             event.value,
-            INPUT_COMPONENT.SELECTED_OPPONENT
+            FORM_INPUT_COMPONENT.OPPONENT
         )
     }
 
