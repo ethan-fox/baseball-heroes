@@ -65,6 +65,7 @@ const SeasonSummary = (props) => {
 
     const handleYearFilterChange = (value) => {
         setFilterYear(value);
+        props.onYearFilterChange(value);
     }
 
     Object.entries(props.playerGames[filterYear]).forEach(([month, gamesForMonth]) => {

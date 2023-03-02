@@ -15,8 +15,8 @@ const SeasonSummaryFilterCard = (props) => {
                 marginBottom: "auto"
             }}>Filter by Year:</div>
             <Select
-                options={props.yearSelectOpts}
-                defaultValue={props.yearSelectOpts.at(-1)}
+                options={props.yearSelectOpts.reverse()}
+                defaultValue={props.yearSelectOpts[0]}
                 onChange={handleYearSelection}
             />
         </div>

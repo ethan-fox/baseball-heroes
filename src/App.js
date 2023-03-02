@@ -4,6 +4,8 @@ import AddGameItemForm from "./domain/component/AddGameItemForm/AddGameItemForm"
 import GameLog from "./domain/component/GameLog/GameLog"
 import SeasonSummary from "./domain/component/SeasonSummary/SeasonSummary";
 
+const getActiveYears = (playerGames) => Object.entries(playerGames).sort()
+
 function App() {
 
   const apiResponse = {
@@ -100,16 +102,41 @@ function App() {
 
   const [playerGames, setPlayerGames] = useState(apiResponse);
 
+  const activeYears = getActiveYears(playerGames)
+
+  const [filterYear, setFilterYear] = useState(activeYears.at(-1)[0])
+
+  console.log('fY', filterYear)
+  console.log('pG',playerGames)
+
   const handleNewGameSubmitted = (payload) => {
     console.log('In the app?', payload)
+  }
+
+  const handleYearFilterChange = (value) => {
+    setFilterYear(value)
+  }
+  
+  const f = (stuff) => {
+    console.log('heyo', stuff)
+    let l = []
+    Object.entries(stuff).forEach(([month, gamesForMonth]) => {
+      console.log('gFM',gamesForMonth)
+      l = l.concat(gamesForMonth)
+    })
+    console.log(l)
+    return l
   }
 
   return (
     <div>
       <h1>Player game tracker!</h1>
-      <SeasonSummary playerGames={playerGames} />
+      <SeasonSummary
+        playerGames={playerGames}
+        onYearFilterChange={handleYearFilterChange}
+      />
       <AddGameItemForm onSubmission={handleNewGameSubmitted} />
-      <GameLog playerGames={playerGames[2020][6]} />
+      <GameLog playerGames={f(playerGames[filterYear])} />
     </div>
   );
 }
