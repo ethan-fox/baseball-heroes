@@ -4,8 +4,6 @@ import AddGameItemForm from "./domain/component/AddGameItemForm/AddGameItemForm"
 import GameLog from "./domain/component/GameLog/GameLog"
 import SeasonSummary from "./domain/component/SeasonSummary/SeasonSummary";
 
-const getActiveYears = (playerGames) => Object.entries(playerGames).sort().map(ea => ea[0])
-
 function App() {
 
   const apiResponse = {
@@ -101,6 +99,8 @@ function App() {
   }
 
   const [playerGames, setPlayerGames] = useState(apiResponse);
+
+  const getActiveYears = (playerGames) => Object.entries(playerGames).sort().map(ea => ea[0])
 
   const activeYears = getActiveYears(playerGames)
 
