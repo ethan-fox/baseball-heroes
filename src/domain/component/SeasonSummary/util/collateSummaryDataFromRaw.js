@@ -1,6 +1,6 @@
 import * as _ from "lodash";
 
-import { MONTH_VALUE_TO_NAME } from "../constant";
+import { MONTH_VALUE_TO_NAME, INITIAL_SUMMARY_DATA } from "../constant";
 
 /* Generate mapping of stats per-month. Final shape:
     {
@@ -15,11 +15,7 @@ const collateSummaryDataFromRaw = (rawData) => {
         ..._.range(0, 12).map(i => {
             return {
                 month: MONTH_VALUE_TO_NAME[i],
-                G: 0,
-                AB: 0,
-                H: 0,
-                BB: 0,
-                K: 0
+                ...INITIAL_SUMMARY_DATA
             }
         })
     };

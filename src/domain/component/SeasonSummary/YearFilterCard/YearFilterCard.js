@@ -1,15 +1,15 @@
-import "./SeasonSummaryFilterCard.css"
+import "./YearFilterCard.css"
 
 import Select from "react-select";
 
 import SmallCard from "../../../../ui/component/Card/SmallCard/SmallCard";
 
-const SeasonSummaryFilterCard = (props) => {
+const YearFilterCard = (props) => {
 
     const handleYearSelection = (event) => props.onYearChange(event.value);
 
-    return <SmallCard className="season-summary__filter-card">
-        <div className="season-summary__filter">
+    return <SmallCard className="year-filter-card">
+        <div className="year-filter">
             <div style={{
                 marginTop: "auto",
                 marginBottom: "auto"
@@ -23,4 +23,4 @@ const SeasonSummaryFilterCard = (props) => {
     </SmallCard>;
 }
 
-export default SeasonSummaryFilterCard;
+export default YearFilterCard;

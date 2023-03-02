@@ -11,3 +11,9 @@
     margin: 0 1rem 1rem 1rem;
     border: 1px ridge rgb(230, 229, 229);
 }
+
+.season-summary__filter-selects {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: auto;
+}
