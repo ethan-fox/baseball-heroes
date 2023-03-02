@@ -84,15 +84,13 @@ const SeasonSummary = (props) => {
             onYearChange={handleYearFilterChange}
         />
         <BigCard className="season-summary__chart">
-            <ResponsiveContainer
-                width="100%" height={300}
-            >
+            <ResponsiveContainer width="100%" height={300}>
                 <BarChart
                     data={chartData}
                     margin={{
                         top: 15,
-                        right: 30,
-                        left: 20,
+                        right: 20,
+                        left: 0,
                         bottom: 5,
                     }}
                 >
