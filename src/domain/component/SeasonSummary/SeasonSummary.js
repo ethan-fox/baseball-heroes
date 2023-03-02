@@ -1,18 +1,19 @@
 import "./SeasonSummary.css"
 
+import { useState } from "react";
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import * as _ from "lodash";
-import Select from "react-select";
 
 import BigCard from "../../../ui/component/Card/BigCard/BigCard";
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import SeasonSummaryFilterCard from "./SeasonSummaryFilterCard/SeasonSummaryFilterCard";
 
-const SeasonSummary = (props) => {
+import { MONTH_VALUE_TO_NAME } from "./constant";
 
-    const summaryByMonth = {};
+const collateSummaryDataFromRaw = (rawData) => {
 
-    const yearsRange = new Set()
+    const summaryByYearAndMonth = {};
 
-    _.range(0, 12).forEach(ea => summaryByMonth[ea] = {
+    _.range(0, 12).forEach(ea => summaryByYearAndMonth[ea] = {
         G: 0,
         H: 0,
         AB: 0,
@@ -20,35 +21,74 @@ const SeasonSummary = (props) => {
         K: 0
     });
 
-    props.playerGames.forEach(g => {
-        yearsRange.add(g.gameData.date.getFullYear())
-        const monthToUpdate = summaryByMonth[g.gameData.date.getMonth()]
+    // return data
+}
 
-        monthToUpdate.G += 1
-        monthToUpdate.H += g.H
-        monthToUpdate.AB += g.AB
-        monthToUpdate.BB += g.BB
-        monthToUpdate.K += g.K
+const SeasonSummary = (props) => {
+
+    const activeYears = [];
+
+
+    Object.entries(props.playerGames).forEach(([year, gamesForYear]) => {
+        activeYears.push(year)
+    });
+    activeYears.sort();
+
+    const mostRecentActiveYear = activeYears.at(-1)
+
+    /*
+    Generate mapping of stats per-month. Final shape:
+    {
+        "0": { G, AB, ... }
+        "1": { G, AB, ... }
+        ...
+    }
+    */
+    const summaryByMonth = {
+        ..._.range(0, 12).map(i => {
+            return {
+                month: MONTH_VALUE_TO_NAME[i],
+                G: 0,
+                AB: 0,
+                H: 0,
+                BB: 0,
+                K: 0
+            }
+        })
+    };
+
+    const yearSelectOpts = Array.from(activeYears).map(ea => { return { value: ea, label: ea } })
+
+    const chartData = _.range(3, 11).map(i => summaryByMonth[i]);
+
+    const [filterYear, setFilterYear] = useState(mostRecentActiveYear)
+
+    const handleYearFilterChange = (value) => {
+        setFilterYear(value);
+    }
+
+    Object.entries(props.playerGames[filterYear]).forEach(([month, gamesForMonth]) => {
+        const monthToUpdate = summaryByMonth[month]
+        gamesForMonth.forEach(game => {
+            monthToUpdate.G += 1
+            monthToUpdate.H += game.H
+            monthToUpdate.AB += game.AB
+            monthToUpdate.BB += game.BB
+            monthToUpdate.K += game.K
+        });
     });
 
-    const yearSelectOpts = Array.from(yearsRange).map(ea => {return {value: ea, label: ea}})
-
-    const data = _.range(2, 10).map(i => summaryByMonth[i]);
-
     return <BigCard className="season-summary">
-        <div className="season-summary__filter">
-            <div>Filter by Year</div>
-            <Select
-                options={yearSelectOpts}
-                defaultValue={yearSelectOpts.at(-1)}
-            />
-        </div>
+        <SeasonSummaryFilterCard
+            yearSelectOpts={yearSelectOpts}
+            onYearChange={handleYearFilterChange}
+        />
         <BigCard className="season-summary__chart">
             <ResponsiveContainer
                 width="100%" height={300}
             >
                 <BarChart
-                    data={data}
+                    data={chartData}
                     margin={{
                         top: 15,
                         right: 30,
@@ -57,10 +97,10 @@ const SeasonSummary = (props) => {
                     }}
                 >
                     <CartesianGrid strokeDasharray="2 2" />
-                    <XAxis dataKey="games" />
+                    <XAxis dataKey="month" />
                     <YAxis />
                     <Tooltip />
-                    <Bar dataKey="G" fill="#8884d8" />
+                    <Bar dataKey="G" fill="#41ba00" />
                 </BarChart>
             </ResponsiveContainer>
         </BigCard>
