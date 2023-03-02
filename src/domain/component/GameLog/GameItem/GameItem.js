@@ -1,10 +1,11 @@
 import "./GameItem.css";
 
-import { formattedCalculation } from "../../../../util/gameItemFormatter"
 
 import BigCard from "../../../../ui/component/Card/BigCard/BigCard";
 import GameData from "./GameData/GameData";
 import StatLine from "./StatLine/StatLine";
+
+import formattedCalculation from "./util/formattedCalculation"
 
 // Two divs:
 // "Game data" -- regardless of the player

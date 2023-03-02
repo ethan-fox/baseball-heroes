@@ -1,6 +1,6 @@
 import * as _ from "lodash"
 
-import { TEAM_ID_TO_INFO } from "../../../constant/team"
+import { TEAM_ID_TO_INFO } from "../../GameLog/GameItem/GameData/util/team"
 
 const FORM_INPUT_COMPONENT = {
     DATE: "DATE",

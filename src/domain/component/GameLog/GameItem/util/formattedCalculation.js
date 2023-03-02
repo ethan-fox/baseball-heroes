@@ -1,4 +1,3 @@
-
 // Convention-dictated method to display AVG, OBP, etc
 const formattedCalculation = (calculatedValue) =>
     // If BA is perfect ...
@@ -12,4 +11,4 @@ const formattedCalculation = (calculatedValue) =>
         // Otherwise, display without the leading zero (`.325`)
         : calculatedValue.toPrecision(3).substring(1)
 
-export { formattedCalculation };
+export default formattedCalculation;
